@@ -2,9 +2,11 @@
   "name": "prueba-kuepa-backend-chat",
   "version": "1.0.0",
   "description": "rest chat api kuepa technical test",
-  "main": "index.js",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,9 @@
   },
   "homepage": "https://github.com/rubenmacias2/Prueba-Kuepa-Backend-Chat#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
   }
 }
