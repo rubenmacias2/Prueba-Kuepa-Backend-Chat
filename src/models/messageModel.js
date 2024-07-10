@@ -1,8 +1,8 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/conectionDb.js';
-import User from './userModel.js'; // Importar User después de que esté definido
+import User from './userModel.js';
 
-const Mensaje = sequelize.define('Mensaje', {
+const menssage = sequelize.define('Mensaje', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -25,10 +25,11 @@ const Mensaje = sequelize.define('Mensaje', {
     }
   }
 }, {
-  tableName: 'MENSAJE'
-});
+  tableName: 'MENSAJE',
+  timestamps: false,
+},);
 
-Mensaje.belongsTo(User, { foreignKey: 'usuario' });
-User.hasMany(Mensaje, { foreignKey: 'usuario' });
+menssage.belongsTo(User, { foreignKey: 'usuario' });
+User.hasMany(menssage, { foreignKey: 'usuario' });
 
-export default Mensaje;
+export default menssage;

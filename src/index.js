@@ -6,6 +6,7 @@ import { Server } from 'socket.io';
 import { createServer } from 'node:http';
 import Sequelize from './database/conectionDb.js';
 import user from './routes/user.js';
+import message from './routes/message.js';
 
 config();
 Sequelize;
@@ -28,7 +29,7 @@ app.use(cors({
   }));
 
 app.use(user);
-
+app.use(message);
 
 app.set('port',port);
 server.listen(app.get('port'), () => console.log(`Server Listen to Port ${app.get('port')}`));

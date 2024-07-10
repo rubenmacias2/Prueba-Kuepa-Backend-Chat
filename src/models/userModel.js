@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/conectionDb.js';
 
-const User = sequelize.define('User', {
+const User = sequelize.define('USUARIO', {
   nombreUsuario: {
     type: DataTypes.STRING,
     primaryKey: true
@@ -19,7 +19,9 @@ const User = sequelize.define('User', {
     allowNull: false
   }
 }, {
-  tableName: 'USUARIO'
-});
+  tableName: 'USUARIO',
+  timestamps: false
+},
+);
 
 export default User;
