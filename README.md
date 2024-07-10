@@ -44,8 +44,11 @@ Luego, abre tu navegador y ve a `http://localhost:8080`.
 Asegúrate de que tu aplicación esté configurada para usar el puerto correcto. En este caso, el servidor está configurado para ejecutarse en `http://localhost:8080`.
 Script
 
-## sql
+## Base de Datos
 
+### Script
+
+```sql
 USE bmgjxray9a9sqlmo6mrs;
 
 CREATE TABLE USUARIO (
