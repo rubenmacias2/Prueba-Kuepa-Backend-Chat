@@ -30,6 +30,7 @@
     "morgan": "^1.10.0",
     "mysql2": "^3.10.2",
     "nodemon": "^3.1.4",
+    "prueba-kuepa-backend-chat": "file:",
     "sequelize": "^6.37.3",
     "socket.io": "^4.7.5"
   }

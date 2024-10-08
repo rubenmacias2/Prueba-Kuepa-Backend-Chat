@@ -27,10 +27,7 @@ io.on('connection', (socket) => {
   
   socket.on('mensajeEnviado', async (data) => {
     try {
-      // Guarda el mensaje en la base de datos
       const nuevoMensaje = await Mensaje.create(data);
-      
-      // Emitir el mensaje a todos los clientes
       io.emit('nuevoMensaje', nuevoMensaje.dataValues);
     } catch (err) {
       console.log(err);

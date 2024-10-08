@@ -10,7 +10,7 @@ router.post('/registroUsuario', async (req, res) => {
       where: { nombreUsuario: nombreUsuario },
       attributes: ['nombreUsuario', 'nombre', 'contrasena', 'rol'],
     });
-    console.log(req.body);
+    console.log(findUser);
     if(!findUser){
       await User.create({
         nombreUsuario,
@@ -45,4 +45,24 @@ router.post('/login', async (req, res) => {
     res.status(500).send({ mensaje: 'Error del servidor', error });
   }
 });
+
+router.get('/findUser', async (req, res) => {
+  const { nombreUsuario } = req.query;
+  try {
+    let findUser = await User.findOne({
+      where: { nombreUsuario: nombreUsuario },
+      attributes: ['nombre', 'rol'],
+    });
+    console.log(findUser);
+    if (!findUser) {
+      res.status(200).send({ mensaje: 'usuario no encontrado', user: findUser });
+    } else {
+      res.status(200).send({ user: findUser });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ mensaje: 'Error del servidor' });
+  }
+});
+
 export default router;
